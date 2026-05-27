@@ -11,6 +11,15 @@ import ct_experiment_utils as ceu
 from folder_locations import get_results_folder, get_data_folder
 from fix_scan_settings import extract_value
 
+def dm_to_masks(dm, inner_apple_dist):
+    mask_outer_apple = np.logical_and(dm<0, dm>=-inner_apple_dist)
+    mask_inner_apple = np.logical_and(dm<-inner_apple_dist, dm>-100)
+    mask_core = dm==-100
+    mask_background = dm>=0
+    mask_foreground = (dm<0)[None, ...]
+    
+    return mask_foreground, mask_background, mask_outer_apple, mask_inner_apple, mask_core   
+
 def segment_apple(image, threshold):
     mask = image > threshold
     

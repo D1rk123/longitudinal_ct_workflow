@@ -1,5 +1,5 @@
 # Longitudinal_ct_workflow
-This repository contains the Python code used in the paper (publication in progress) _"Longitudinal CT scanning for explainable early detection of postharvest disorders: The ‘Braeburn’ browning case"_. The paper describes a workflow for acquiring longitudinal CT datasets for developing early detection systems of postharvest disorders. It uses image registration to align the orientations of the CT scans, and four data analysis methods for detecting, analyzing, and understanding the time-dependent evolution of internal disorders.
+This repository contains the Python code used in the paper (submitted for publication) _"Longitudinal CT Scanning for Explainable Early Detection of Postharvest Disorders: The ‘Braeburn’ Browning Case"_. The paper presents two workflows for leveraging longitudinal computed tomography (CT) datasets when developing deep learning-based detection systems for gradually developing postharvest disorders, and demonstrates them on a dataset of CT scans of ‘Braeburn’ apples that developed internal browning.
 
 ## Running the code
 
@@ -32,6 +32,7 @@ Different scripts were used at different parts of the workflow. Here is an overv
 - fit_bh_params_juice.py
 - fix_scan_settings.py
 - recon_corr_bh_crop.py
+- segment_CT_scans.py
 
 **Image registration**
 - image_registration_and_crop.py
@@ -40,13 +41,7 @@ Different scripts were used at different parts of the workflow. Here is an overv
 - plot_difference_image_CT.py
 - plot_difference_image_proj.py
 
-**Quantitative analysis of regional changes**
-- calc_porosity.py
-- plot_porosity_boxplots.py
-- plot_segmentation.py
-- segment_CT_scans.py
-
-**Classification for early detection**
+**Workflow 1: Longitudinal benchmarking of classifiers**
 - apply_NN.py
 - apply_NN_proj.py
 - calc_constant_performance.py
@@ -58,7 +53,7 @@ Different scripts were used at different parts of the workflow. Here is an overv
 - optuna_pl_callback.py
 - split_train_test_val.py
 
-**Longitudinally explainable deep learning**
+**Workflow 2: Longitudinal XAI heatmaps**
 - calc_baselines_performance.py
 - invertible_augmentations.py
 - plot_longitudinal_IG.py
